@@ -1,43 +1,22 @@
+import { Typography } from '@mui/material';
 import React from 'react';
-import DeleteIcon from '@mui/icons-material/Delete';
-import { Button, Icon, IconButton } from '@mui/material';
+
 
 
 function App() {
   return (
     <div>
-      <DeleteIcon
-      color='primary'
-      />
-      <Icon>
-        room
-      </Icon>
+    <Typography variant='h1' color='primary'>
+      Hola Mundo
+    </Typography>
 
-      <Button
-      variant="contained"
-      color="secondary"
-      endIcon={<DeleteIcon/>}
-      >
-        Delete
-      </Button>
+    <Typography variant="body1" color="secondary" align='center'>
+      Lorem
+    </Typography>
 
-      <Button
-      variant="contained"
-      color="secondary"
-      endIcon={<Icon>
-        room
-      </Icon>}
-      >
-        Delete
-      </Button>
-
-      <IconButton 
-      aria-label="delete"
-      >
-        <DeleteIcon
-      color='primary'
-      />
-      </IconButton>
+    <Typography variant="body1" color="primary">
+      lorem
+    </Typography>
     </div>
   );
 }
