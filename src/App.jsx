@@ -1,65 +1,43 @@
 import React from 'react';
-import Button from '@mui/material/Button'
-
+import DeleteIcon from '@mui/icons-material/Delete';
+import { Button, Icon, IconButton } from '@mui/material';
 
 
 function App() {
   return (
     <div>
-      <Button color="secondary">
-        Color
-      </Button>
+      <DeleteIcon
+      color='primary'
+      />
+      <Icon>
+        room
+      </Icon>
 
       <Button
-      color="primary"
       variant="contained"
-      >
-        Outlined
-      </Button>
-
-      <p>Lorem</p>
-      
-      <Button
-      className='mt-2 mb-4'
       color="secondary"
-      variant='contained'
-      disableElevation 
+      endIcon={<DeleteIcon/>}
       >
-        Color
-      </Button>
-    <br></br>
-    <Button
-      color="secondary"
-      variant='contained'
-      href='https://google.com'
-      disableElevation
-      >
-        Google
-      </Button>
-    
-      <Button
-      color="secondary"
-      variant='contained'
-      fullWidth
-      >
-        fullWidth
+        Delete
       </Button>
 
       <Button
+      variant="contained"
       color="secondary"
-      variant='contained'
-      size='small'
+      endIcon={<Icon>
+        room
+      </Icon>}
       >
-        fullWidth
+        Delete
       </Button>
 
-      <Button
-      color="secondary"
-      variant='contained'
-      size='large'
+      <IconButton 
+      aria-label="delete"
       >
-        fullWidth
-      </Button>
+        <DeleteIcon
+      color='primary'
+      />
+      </IconButton>
     </div>
   );
 }
