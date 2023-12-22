@@ -1,24 +1,26 @@
-import { Typography } from '@mui/material';
-import React from 'react';
+import * as React from 'react';
+import { styled, createTheme, ThemeProvider } from '@mui/system';
 
+const customTheme = createTheme({
+  palette: {
+    primary: {
+      main: '#1976d2',
+      contrastText: 'white',
+    },
+  },
+});
 
+const MyThemeComponent = styled('div')(({ theme }) => ({
+  color: theme.palette.primary.contrastText,
+  backgroundColor: theme.palette.primary.main,
+  padding: theme.spacing(1),
+  borderRadius: theme.shape.borderRadius,
+}));
 
-function App() {
+export default function ThemeUsage() {
   return (
-    <div>
-    <Typography variant='h1' color='primary'>
-      Hola Mundo
-    </Typography>
-
-    <Typography variant="body1" color="secondary" align='center'>
-      Lorem
-    </Typography>
-
-    <Typography variant="body1" color="primary">
-      lorem
-    </Typography>
-    </div>
+    <ThemeProvider theme={customTheme}>
+      <MyThemeComponent>Styled div with theme</MyThemeComponent>
+    </ThemeProvider>
   );
 }
-
-export default App;
