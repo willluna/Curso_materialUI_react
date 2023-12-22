@@ -1,26 +1,22 @@
-import * as React from 'react';
-import { styled, createTheme, ThemeProvider } from '@mui/system';
+import React from "react";
+import Button from "@mui/material/Button";
+import { ThemeProvider } from '@mui/material/styles';
 
-const customTheme = createTheme({
-  palette: {
-    primary: {
-      main: '#1976d2',
-      contrastText: 'white',
-    },
-  },
-});
+import theme from './themeConfig'
 
-const MyThemeComponent = styled('div')(({ theme }) => ({
-  color: theme.palette.primary.contrastText,
-  backgroundColor: theme.palette.primary.main,
-  padding: theme.spacing(1),
-  borderRadius: theme.shape.borderRadius,
-}));
+function App() {
 
-export default function ThemeUsage() {
   return (
-    <ThemeProvider theme={customTheme}>
-      <MyThemeComponent>Styled div with theme</MyThemeComponent>
+    <ThemeProvider theme={theme}>
+      <Button variant="contained" color="primary">
+        Botón
+      </Button>
+
+      <Button variant="contained" color="secondary">
+        Botón
+      </Button>
     </ThemeProvider>
   );
 }
+
+export default App;
